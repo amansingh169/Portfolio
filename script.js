@@ -1,3 +1,4 @@
+// Sticky header on scroll
 $(window).on("scroll", function () {
   var scrollTop = $(window).scrollTop();
   if (scrollTop >= 100) {
@@ -7,20 +8,22 @@ $(window).on("scroll", function () {
   }
 });
 
+// Typed.js effect
 new Typed("#type-it", {
   strings: ["UI Developer", "Frontend Developer", "CSS Expert"],
   typeSpeed: 50,
   loop: true,
 });
 
-$(".px-4").tilt({
+// VanillaTilt init (instead of jQuery .tilt)
+VanillaTilt.init(document.querySelectorAll(".px-4"), {
   glare: true,
-  maxGlare: 0.2,
-  maxTilt: 5,
+  "max-glare": 0.2,
+  max: 5,
 });
 
-$(".project-card").tilt({
+VanillaTilt.init(document.querySelectorAll(".project-card"), {
   glare: true,
-  maxGlare: 0.2,
-  maxTilt: 3,
+  "max-glare": 0.2,
+  max: 3,
 });
